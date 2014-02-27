@@ -36,5 +36,6 @@ public class A {
        // test1("\\d+[.]?\\d+\\sx\\s\\d+[.]?\\d+\\s+(cm|m)","12.0 x 12 cm");
         //test1("\\b(?<name>\\d{2}\\w?)\\w?\\k<name>\\b","12.0 x 12 cm");
         test1("\\s*\\S*\\/\\s*\\S*","dfdsf//asd");
+        test1("\\s*\\S*\\/\\s*\\S*","dfdsf//asdddddddd");
     }
 }
