@@ -38,6 +38,7 @@ public class Test {
         for(Student stu : ps){
             System.out.println("id:"+stu.getId()+",name:"+stu.getName());
         }
+        System.out.println();
     }
 }
 
