@@ -39,5 +39,7 @@ public class A {
         
         //test branch
         test1("\\s*\\S*\\/\\s*\\S*","dfdsf//asd");
+      //test branch twice
+        test1("\\s*\\S*\\/\\s*\\S*","dfdsf//asd");
     }
 }
