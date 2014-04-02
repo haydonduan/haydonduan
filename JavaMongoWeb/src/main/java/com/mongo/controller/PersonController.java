@@ -1,4 +1,4 @@
-package com.mongo;
+package com.mongo.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.mongo.domain.Person;
+import com.mongo.service.PersonService;
+import com.mongo.util.PageBean;
 
 @Controller
 public class PersonController {

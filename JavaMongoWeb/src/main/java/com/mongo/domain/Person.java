@@ -1,4 +1,4 @@
-package com.mongo;
+package com.mongo.domain;
 
 public class Person {
     private String name;

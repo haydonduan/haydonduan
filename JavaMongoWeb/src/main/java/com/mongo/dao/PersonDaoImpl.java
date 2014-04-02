@@ -1,4 +1,4 @@
-package com.mongo;
+package com.mongo.dao;
 
 import java.util.List;
 
@@ -8,8 +8,11 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
-@Service("personService")
-public class PersonServiceImpl implements PersonService {
+import com.mongo.domain.Person;
+import com.mongo.util.PageBean;
+
+@Service("personDao")
+public class PersonDaoImpl implements PersonDao {
 
     @Autowired
     private MongoTemplate mongoTemplate;

@@ -1,4 +1,4 @@
-package com.mongo;
+package com.mongo.util;
 
 public class PageBean {
     
