@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<center>
+<a href="${context}/logout">logout</a><br>
     hello:${person.name}
     <br>
     用户有：
@@ -23,5 +25,6 @@
          <c:if test="${pageBean.hasNextPage}">
                         <a href="${context}/detail/${pageBean.currentPage+1}">下一页</a>
          </c:if>
+ </center>
 </body>
 </html>

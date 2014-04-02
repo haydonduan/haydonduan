@@ -8,12 +8,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+<center>
     <form action="${context}/doregister" method="post">
 	    <table>
 	       <tr><td>name:</td><td><input type="text" name="name"></td></tr>
 	       <tr><td>psw:</td><td><input type="password" name="password"></td></tr>
 	       <tr><td><input type="submit" value="submit"></td></tr>
 	    </table>
+	    <span style="color:red">${registerTips}</span>
     </form>
+    </center>
 </body>
 </html>

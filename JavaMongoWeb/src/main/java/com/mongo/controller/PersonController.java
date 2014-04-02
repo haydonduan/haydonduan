@@ -28,6 +28,13 @@ public class PersonController {
         return mav;
     }
     
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(){
+        HttpSession session = request.getSession();
+        session.invalidate();
+        return "index";
+    }
+    
     @RequestMapping(value = "/check", method = RequestMethod.POST)
     public ModelAndView check(ModelMap model,String name,String password){
         Person person = personService.findPersonByName(name);
@@ -37,7 +44,7 @@ public class PersonController {
        if(person == null){
            mav.setViewName("index");
        }else{
-           if(person.getPassword().equals(password)){
+           if(!"".equals(person.getPassword()) && null != person.getPassword() && person.getPassword().equals(password)){
                mav.setViewName("success");
                detail(mav,1);
            }else{
@@ -48,8 +55,8 @@ public class PersonController {
     }
     @RequestMapping(value = "/detail/{currentPage}", method = RequestMethod.GET)
     public ModelAndView detail(ModelAndView mav,@PathVariable("currentPage") int currentPage){
-        HttpSession session = request.getSession(false);
-        if(session == null){
+        HttpSession session = request.getSession(true);
+        if(session.getAttribute("sessionUser") == null){
             mav.setViewName("index");
             return mav;
         }
@@ -72,8 +79,12 @@ public class PersonController {
         if("".equals(p.getName().trim()) || "".equals(p.getPassword().trim())){
             mav.setViewName("register");
         }else{
-            personService.saveUser(p);
-            mav.setViewName("index");
+            if(personService.saveUser(p)){
+                mav.setViewName("index");
+            }else{
+                mav.setViewName("register");
+                model.addAttribute("registerTips", "ÒÑ×¢²á£¡");
+            }
         }
         return mav;
     }

@@ -18,8 +18,13 @@ public class PersonServiceImpl implements PersonService {
         return personDao.getPerson(currentPage);
     }
 
-    public void saveUser(Person p) {
+    public boolean saveUser(Person p) {
+        Person existP = findPersonByName(p.getName());
+        if(existP != null){
+            return false;
+        }
         personDao.saveUser(p);
+        return true;
     }
 
     public Person findPersonByName(String name) {

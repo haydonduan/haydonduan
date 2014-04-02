@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Order;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,9 @@ public class PersonDaoImpl implements PersonDao {
     private MongoTemplate mongoTemplate;
 
     public List<Person> getPerson(int currentPage) {
-        return mongoTemplate.find(new Query().limit(PageBean.PAGE_SIZE).skip((currentPage - 1) * PageBean.PAGE_SIZE), Person.class);
+        Query query = new Query();
+        query.sort().on("_id", Order.DESCENDING);
+        return mongoTemplate.find(query.limit(PageBean.PAGE_SIZE).skip((currentPage - 1) * PageBean.PAGE_SIZE), Person.class);
     }
 
     public void saveUser(Person p) {

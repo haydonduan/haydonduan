@@ -7,6 +7,6 @@ import com.mongo.domain.Person;
 public interface PersonService{
     List<Person> getPerson(int currentPage);
     Person findPersonByName(String name);
-    void saveUser(Person p);
+    boolean saveUser(Person p);
     int allUserCount();
 }

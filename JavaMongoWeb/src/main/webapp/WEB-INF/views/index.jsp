@@ -8,12 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<center>
     <form action="${context}/check" method="post">
 	    <table>
 	       <tr><td>name:</td><td><input type="text" name="name"></td></tr>
-	       <tr><td>psw:</td><td><input type="text" name="password"></td></tr>
+	       <tr><td>psw:</td><td><input type="password" name="password"></td></tr>
 	       <tr><td><input type="button" value="register" onclick="javascript:window.location.href='${context}/register'"></td><td><input type="submit" value="submit"></td></tr>
 	    </table>
     </form>
+ </center>
 </body>
 </html>
