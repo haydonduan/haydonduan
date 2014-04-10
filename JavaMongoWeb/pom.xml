@@ -3,10 +3,46 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mongo</groupId>
-	<artifactId>springmvc-springdata-mongodb</artifactId>
-	<name>springmvc-springdata-mongodb</name>
+	<artifactId>JavaMongoWeb</artifactId>
+	<name>JavaMongoWeb</name>
 	<packaging>war</packaging>
 	<version>1.0.0-SNAPSHOT</version>
+	<url>http://maven.apache.org</url>
+
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<url>http://repo.springsource.org/libs-milestone/</url>
+		</repository>
+
+		<repository>
+			<id>java.net2</id>
+			<name>Repository hosting the jee6 artifacts</name>
+			<url>http://download.java.net/maven/2</url>
+		</repository>
+
+		<repository>
+			<id>springsource-repo</id>
+			<name>SpringSource Repository</name>
+			<url>http://repo.springsource.org/release</url>
+		</repository>
+
+		<repository>
+			<id>spring-milestone</id>
+			<name>Spring Maven MILESTONE Repository</name>
+			<url>http://maven.springframework.org/milestone</url>
+		</repository>
+
+		<repository>
+			<id>spring-snnapshot</id>
+			<name>Spring Maven SNAPSHOT Repository</name>
+			<url>http://maven.springframework.org/snapshot</url>
+		</repository>
+		<repository>
+			<id>google-api-services</id>
+			<url>http://google-api-client-libraries.appspot.com/mavenrepo</url>
+		</repository>
+	</repositories>
 
 	<properties>
 		<java-version>1.6</java-version>
@@ -86,19 +122,10 @@
 			<version>1</version>
 		</dependency>
 
-		<!-- Servlet
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
-			<scope>provided</scope>
-		</dependency> -->
+		<!-- Servlet <dependency> <groupId>javax.servlet</groupId> <artifactId>servlet-api</artifactId> 
+			<version>2.5</version> <scope>provided</scope> </dependency> <dependency> 
+			<groupId>javax.servlet.jsp</groupId> <artifactId>jsp-api</artifactId> <version>2.1</version> 
+			<scope>provided</scope> </dependency> -->
 		<dependency>
 			<groupId>javax.servlet.jsp.jstl</groupId>
 			<artifactId>jstl-api</artifactId>
@@ -110,51 +137,19 @@
 			<version>1.2</version>
 		</dependency>
 
-		<!-- Jackson JSON Processor 
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.8.1</version>
-		</dependency>
--->
-		<!-- Rome Atom+RSS
-		<dependency>
-			<groupId>net.java.dev.rome</groupId>
-			<artifactId>rome</artifactId>
-			<version>1.0.0</version>
-		</dependency>
- -->
-		<!-- JSR 303 with Hibernate Validator
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>1.0.0.GA</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>4.1.0.Final</version>
-		</dependency>
- -->
-		<!-- Joda Time Library 
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>1.6.2</version>
-		</dependency>
--->
-		<!-- File Upload 
-		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>1.2.2</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.0.1</version>
-		</dependency>
--->
+		<!-- Jackson JSON Processor <dependency> <groupId>org.codehaus.jackson</groupId> 
+			<artifactId>jackson-mapper-asl</artifactId> <version>1.8.1</version> </dependency> -->
+		<!-- Rome Atom+RSS <dependency> <groupId>net.java.dev.rome</groupId> <artifactId>rome</artifactId> 
+			<version>1.0.0</version> </dependency> -->
+		<!-- JSR 303 with Hibernate Validator <dependency> <groupId>javax.validation</groupId> 
+			<artifactId>validation-api</artifactId> <version>1.0.0.GA</version> </dependency> 
+			<dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-validator</artifactId> 
+			<version>4.1.0.Final</version> </dependency> -->
+		<!-- Joda Time Library <dependency> <groupId>joda-time</groupId> <artifactId>joda-time</artifactId> 
+			<version>1.6.2</version> </dependency> -->
+		<!-- File Upload <dependency> <groupId>commons-fileupload</groupId> <artifactId>commons-fileupload</artifactId> 
+			<version>1.2.2</version> </dependency> <dependency> <groupId>commons-io</groupId> 
+			<artifactId>commons-io</artifactId> <version>2.0.1</version> </dependency> -->
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>

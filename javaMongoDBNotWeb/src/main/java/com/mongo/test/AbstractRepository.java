@@ -1,9 +1,9 @@
-package com.mongo.test;
+﻿package com.mongo.test;
 
 import java.util.List;
 
 public interface AbstractRepository {
-    /** 
+    /**    
      *  
      *<b>function:</b>添加对象 
      * @author cuiran 

@@ -9,14 +9,14 @@
 </head>
 <body>
 <center>
-<a href="${context}/index">返回</a>
-    <form action="${context}/doregister" method="post">
+    <form action="${context}/doupdate" method="post">
+    <input type="hidden" name="_id" value="${p._id}">
 	    <table>
-	       <tr><td>name:</td><td><input type="text" name="name"></td></tr>
-	       <tr><td>psw:</td><td><input type="password" name="password"></td></tr>
+	       <tr><td>name:</td><td><input type="text" name="name" value="${p.name}"></td></tr>
+	       <tr><td>psw:</td><td><input type="password" name="password" value="${p.password}"></td></tr>
 	       <tr><td><input type="submit" value="submit"></td></tr>
 	    </table>
-	    <span style="color:red">${registerTips}</span>
+	    <span style="color:red">${tips}</span>
     </form>
     </center>
 </body>

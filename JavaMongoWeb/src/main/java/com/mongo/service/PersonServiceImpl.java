@@ -35,4 +35,12 @@ public class PersonServiceImpl implements PersonService {
         return personDao.allUserCount();
     }
 
+    public boolean updatePerson(Person person) {
+        int result = personDao.updatePerson(person);
+        if(result > 0){
+            return true;
+        }
+        return false;
+    }
+
 }

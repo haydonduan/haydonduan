@@ -16,7 +16,7 @@ import com.mongo.service.PersonService;
 import com.mongo.util.PageBean;
 
 @Controller
-public class PersonController {
+public class PersonController extends BasicController{
     @Autowired
     private HttpServletRequest request;
     @Autowired
@@ -38,8 +38,7 @@ public class PersonController {
     @RequestMapping(value = "/check", method = RequestMethod.POST)
     public ModelAndView check(ModelMap model,String name,String password){
         Person person = personService.findPersonByName(name);
-        HttpSession session = request.getSession();
-        session.setAttribute("sessionUser", person);
+        setSessionPerson(person);
         ModelAndView mav = new ModelAndView();
        if(person == null){
            mav.setViewName("index");
@@ -86,6 +85,36 @@ public class PersonController {
                 model.addAttribute("registerTips", "ÒÑ×¢²á£¡");
             }
         }
+        return mav;
+    }
+    
+    @RequestMapping(value = "/update", method = RequestMethod.GET)
+    public ModelAndView updatepage(ModelMap model){
+        ModelAndView mav = new ModelAndView();
+        if(getPerson() == null){
+            mav.setViewName("index");
+            return mav;
+        }
+        mav.addObject("p", getPerson());
+        mav.setViewName("update");
+        return mav;
+    }
+    
+    @RequestMapping(value = "/doupdate", method = RequestMethod.POST)
+    public ModelAndView update(ModelMap model,Person p,String _id){
+        ModelAndView mav = new ModelAndView();
+        if(getPerson() == null){
+            mav.setViewName("index");
+            return mav;
+        }
+        p.set_id(_id);
+        if(personService.updatePerson(p)){
+          setSessionPerson(p);
+          return detail(mav, 1);
+        }
+        mav.setViewName("update");
+        mav.addObject("p", getPerson());
+        mav.addObject("tips","Ê§°Ü");
         return mav;
     }
 }

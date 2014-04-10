@@ -7,10 +7,12 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Order;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import com.mongo.domain.Person;
 import com.mongo.util.PageBean;
+import com.mongodb.WriteResult;
 
 @Service("personDao")
 public class PersonDaoImpl implements PersonDao {
@@ -36,6 +38,15 @@ public class PersonDaoImpl implements PersonDao {
 
     public int allUserCount() {
         return mongoTemplate.findAll(Person.class).size();
+    }
+
+    public int updatePerson(Person p) {
+        Query query = new Query(Criteria.where("_id").is(p.get_id()));
+        Update update = new Update();
+        update.set("name",p.getName());
+        update.set("password",p.getPassword());
+        WriteResult wr =  mongoTemplate.updateMulti(query, update, Person.class);
+        return wr.getN();
     }
 
 }

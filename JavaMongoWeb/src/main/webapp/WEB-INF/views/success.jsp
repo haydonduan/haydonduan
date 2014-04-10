@@ -9,7 +9,7 @@
 </head>
 <body>
 <center>
-<a href="${context}/logout">logout</a><br>
+<a href="${context}/logout">logout</a><br><a href="${context}/update">更新</a><br>
     hello:${person.name}
     <br>
     用户有：
